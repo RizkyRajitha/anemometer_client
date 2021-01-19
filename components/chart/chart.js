@@ -37,7 +37,7 @@ const Chart = ({ chartData }) => {
     <>
       <div style={{ width: "50vw", height: "30vh" }}>
         <Line
-          key={JSON.stringify(chartData.lables)}
+          // key={JSON.stringify(chartData.lables)}
           type="line"
           redraw={true}
           data={chartData}
