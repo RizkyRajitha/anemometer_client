@@ -13,20 +13,20 @@ export default function DynamicComponent() {
     labels: ["0", "0", "0", "0", "0"],
     datasets: [
       {
-        label: "My First dataset",
+        label: "Realtime Data",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)",
+        backgroundColor: "rgba(187,225,250,0.4)",
+        borderColor: "rgba(187,225,250,1)",
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: "rgba(75,192,192,1)",
+        pointBorderColor: "rgba(187,225,250,1)",
         pointBackgroundColor: "#fff",
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        pointHoverBackgroundColor: "rgba(187,225,250,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
         pointRadius: 1,
@@ -55,7 +55,10 @@ export default function DynamicComponent() {
       console.log(val);
       setchartData((pre) => {
         console.log(pre);
-        pre.labels = arrayAdd(pre.labels, new Date().getMilliseconds());
+        pre.labels = arrayAdd(
+          pre.labels,
+          `${new Date().getHours()} ${new Date().getMinutes()} ${new Date().getSeconds()}:${new Date().getMilliseconds()}`
+        );
         pre.datasets[0].data = arrayAdd(pre.datasets[0].data, val[0]);
         return pre;
         // pre.labels = arrayAdd(pre.labels, new Date().getMilliseconds());

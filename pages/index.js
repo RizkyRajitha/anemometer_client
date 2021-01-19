@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./home.module.css";
 import DynamicComponent from "../components/dynamicComponent/dynamicComponent";
+import Footer from "../components/footer/footer";
+import HystoricalComponent from "../components/hystoricalComponent/hystoricalComponent";
 
 const Home = () => {
   return (
     <>
       <div className={styles.container}>
         <h1 className={styles.title}>Rizky Labs</h1>
-
         <DynamicComponent />
       </div>
+      <HystoricalComponent />
+      {/* <Footer /> */}
     </>
   );
 };

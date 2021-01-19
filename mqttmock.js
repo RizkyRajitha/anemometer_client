@@ -13,7 +13,7 @@ client.on("connect", () => {
     )};${Math.floor((Math.random() * 100) % 50)}`;
     console.log("published : " + val);
     client.publish("ultralegendpro", val);
-  }, 2000);
+  }, 1000);
 });
 
 client.on("error", (error) => console.log(error));
