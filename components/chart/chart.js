@@ -1,7 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import styles from "./chart.module.css";
-let shiftCount = 0;
 const Chart = ({ chartData }) => {
   console.log(chartData);
   return (
