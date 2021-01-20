@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import styles from "./hystoricalComponent.module.css";
 import Chart from "../chart/chart";
 
+const API =
+  process.env.NODE_ENV === "production"
+    ? "http://localhost:3001"
+    : "http://localhost:3001";
+    
+console.log(process.env.NODE_ENV);
+
 export default function HystoricalComponent() {
   const [chartData, setchartData] = useState();
 
@@ -10,7 +17,7 @@ export default function HystoricalComponent() {
   }, []);
 
   const getData = (interval = "week") => {
-    fetch(`http://localhost:3001/getdatalast${interval}`)
+    fetch(`${API}/getdatalast${interval}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
